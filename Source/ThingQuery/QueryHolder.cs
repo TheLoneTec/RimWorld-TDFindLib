@@ -506,12 +506,12 @@ namespace TD_Find_Lib
 		{
 			if (def is ThingQueryDef fDef)
 				return new FloatMenuOption(
-					fDef.LabelCap,
+					fDef.GetLabel(),
 					() => Add(ThingQueryMaker.MakeQuery(fDef), focus: true)
 				);
 			else if (def is ThingQueryPreselectDef pDef)
 				return new FloatMenuOption(
-					pDef.LabelCap,
+					pDef.GetLabel(),
 					() => Add(ThingQueryMaker.MakeQuery(pDef), focus: true)
 				);
 			else if (def is ThingQueryCategoryDef cDef)
@@ -528,7 +528,7 @@ namespace TD_Find_Lib
 				else
 				{
 					return new FloatMenuOption(
-						"+ " + cDef.LabelCap,
+						"+ " + cDef.GetLabel(),
 						() => DoFloatAllQueries(cDef.subQueries)
 					);
 				}
